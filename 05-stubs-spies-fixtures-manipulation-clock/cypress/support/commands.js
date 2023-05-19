@@ -23,16 +23,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-// Cypress custom commands
-Cypress.Commands.add('submitForm', () => {
-  cy.get('form button[type="submit"]').click()
-})
-
-//Cypress custom query
-Cypress.Commands.addQuery('getById', (id) => {
-  const getFunction = cy.now('get', `[data=cy="${id}"]`)
-  return () => {
-    return getFunction()
-  }
-})
